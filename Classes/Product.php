@@ -10,13 +10,21 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 <!-- potremmo usare tre classi figlie a loro volta, una per cibo, un'altra per giochi e cucce ed un'altra per prodotti per animali  -->
 
 <?php
-require_once __DIR__ . '/Product.php';
+require_once __DIR__ . '/Category.php';
+require_once __DIR__ . '/Food.php';
+require_once __DIR__ . '/PetBed.php';
+require_once __DIR__ . '/ProductShop.php';
+
+
+
 class Product
 {
-    protected $nameProduct;
-    protected $category;
-    protected $price;
-    protected $available;
+    public $nameProduct;
+    public $category;
+    public $price;
+    public $imageUrl;
+    public $description;
+    // protected $available;
 
     /**
      * fun construct Product
@@ -26,24 +34,54 @@ class Product
      * @param integer $_price
      * @param boolean $_available
      */
-    protected function __construct(string $_nameProduct, Category $_category, int $_price, bool $_available)
+    public function __construct(string $_nameProduct, Category $_category, float $_price, string $_imageUrl, string $_description)
     {
         $this->nameProduct = $_nameProduct;
         $this->category = $_category;
         $this->price = $_price;
-        $this->available = $_available;
+        $this->imageUrl = $_imageUrl;
+        $this->description = $_description;
+        // $this->available = $_available;
     }
-
-    protected function setNameProduct($_nameProduct)
+    // Function SET e GET nameProduct
+    public function setNameProduct($_nameProduct)
     {
         $this->nameProduct = ucfirst(strtolower($_nameProduct));
     }
-
-    protected function setPrice($price)
+    public function getNameProduct()
     {
-        if (is_string($price)) {
-            $this->price = intval($price);
+        return $this->nameProduct;
+    }
+    // Function SET e GET price
+    public function setPrice($_price)
+    {
+        if (is_string($_price)) {
+            $this->price = intval($_price);
         }
     }
+    public function getPrice()
+    {
+        return $this->price;
+    }
+    // Function SET e GET imageURL
+    public function setImageUrl($_imageUrl)
+    {
+        $this->imageUrl = $_imageUrl;
+    }
+    // Function SET e GET description
+
+    public function setDescription()
+    {
+        return $this->description;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+    // Function SET e GET available
+
 }
+
+
 ?>

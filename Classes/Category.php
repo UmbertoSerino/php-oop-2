@@ -13,5 +13,30 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 require_once __DIR__ . '/Product.php';
 class Category extends Product
 {
+    protected $type;
+    protected $pedigree;
+    protected $age;
+
+    public function __construct(string $_type, string $_pedigree = null, string $_age)
+    {
+        $this->type = $_type;
+        $this->pedigree = $_pedigree;
+        $this->age = $_age;
+    }
+
+    public function setType($_type)
+    {
+        $this->type = ucfirst(strtolower($_type));
+    }
 }
+
+$categorieDog = [
+    $categoryDog_1 = new Category('Dog', 'German Shepherd', 'Adult'),
+    $categoryDog_2 = new Category('Dog', 'Bulldog', 'Puppy')
+];
+
+$categorieCat = [
+    $categoryCat_1 = new Category('Cat', 'Maine Coon', 'Adult'),
+    $categoryCat_2 = new Category('Cat', 'Ragdoll', 'Puppy'),
+];
 ?>
