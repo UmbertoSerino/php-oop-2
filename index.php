@@ -11,7 +11,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Shop</title>
     <!-- Bootstrap Style -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- My Style -->
     <link rel="stylesheet" href="./style/style.css">
     <!-- Font Awesome -->
@@ -32,7 +33,7 @@ session_start();
     </header>
     <main class="container">
         <!-- FORM LOGIN -->
-        <form action="./index.php" method="POST">
+        <form action="./login.php" method="POST">
             <div class="form-group mb-3">
                 <label for="email">Email address</label>
                 <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
@@ -44,44 +45,6 @@ session_start();
             </div>
             <button type="submit" class="btn btn-primary mb-5">Submit</button>
         </form>
-        <?php if (isset($_POST['email']) && isset($_POST['password'])) {
-            if ($_POST['email'] === 'AAA@gmail.com' && $_POST['password'] === '12345') {
-                $_SESSION['email'] = $_POST['email'];
-        ?>
-                <article>
-                    <div class="row">
-                        <!-- start foreach product -->
-                        <?php foreach ($listProduct as $product) { ?>
-                            <div class="col-3 mb-5">
-                                <div class="card col-6" style="width: 18rem;">
-                                    <img src=" <?php echo $product->imageUrl ?> " class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $product->getNameProduct() ?></h5>
-                                        <p class="card-text">Descrizione: <?php echo $product->getDescription() ?></p>
-                                        <p class="card-text">Prezzo: <?php echo $product->getPrice() ?>&euro;</p>
-                                        <p class="card-text">Adatto per: <?php echo $product->getCategory()->getType() ?></p>
-                                        <!-- additional category: condition Toys -->
-                                        <?php if (is_a($product, 'Toy')) { ?>
-                                            <p class="card-text">Tipo di Materiale: <?php echo $product->getMaterial() ?></p>
-                                            <!-- additional category: condition Food -->
-                                        <?php } elseif (is_a($product, 'Food')) { ?>
-                                            <p class="card-text">Gusto: <?php echo $product->getTypeOfFlavor() ?></p>
-                                            <!-- additional category: condition PetBed -->
-                                        <?php } elseif (is_A($product, 'petBed')) { ?>
-                                            <p class="card-text">Dimensioni: <?php echo $product->getSize() ?></p>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>
-                    </div>
-                </article>
-            <?php } else { ?>
-                <div class="alert alert-danger" role="alert">
-                    A simple danger alert—check it out!
-                </div>
-        <?php  }
-        } ?>
     </main>
 </body>
 
