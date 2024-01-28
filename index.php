@@ -15,7 +15,8 @@ require_once __DIR__ . '/Classes/Product.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Shop</title>
     <!-- Bootstrap Style -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- My Style -->
     <link rel="stylesheet" href="./style/style.css">
 </head>
@@ -24,17 +25,51 @@ require_once __DIR__ . '/Classes/Product.php';
     <article class="container">
         <div class="row">
             <?php foreach ($petBedList as $petBed) { ?>
-                <div class="col-3">
-                    <div class="card col-6" style="width: 18rem;">
-                        <img src=" <?php echo $petBed->imageUrl ?> " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $petBed->getNameProduct() ?></h5>
-                            <p class="card-text">Descrizione: <?php echo $petBed->getDescription() ?></p>
-                            <p class="card-text">Prezzo: <?php echo $petBed->getPrice() ?>&euro;</p>
-                            <p class="card-text">Dimensioni: <?php echo $petBed->getSize() ?></p>
-                        </div>
+            <div class="col-3 mb-5">
+                <div class="card col-6" style="width: 18rem;">
+                    <img src=" <?php echo $petBed->imageUrl ?> " class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $petBed->getNameProduct() ?></h5>
+                        <p class="card-text">Descrizione: <?php echo $petBed->getDescription() ?></p>
+                        <p class="card-text">Prezzo: <?php echo $petBed->getPrice() ?>&euro;</p>
+                        <p class="card-text">Dimensioni: <?php echo $petBed->getSize() ?></p>
+                        <p class="card-text">Adatto per: <?php echo $petBed->getCategory()->getType() ?></p>
+
                     </div>
                 </div>
+            </div>
+            <?php } ?>
+            <?php foreach ($foodPetList as $foodPet) { ?>
+            <div class="col-3">
+                <div class="card col-6" style="width: 18rem;">
+                    <img src=" <?php echo $foodPet->imageUrl ?> " class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $foodPet->getNameProduct() ?></h5>
+                        <p class="card-text">Descrizione: <?php echo $foodPet->getDescription() ?></p>
+                        <p class="card-text">Prezzo: <?php echo $foodPet->getPrice() ?>&euro;</p>
+                        <p class="card-text">Adatto per: <?php echo $petBed->getCategory()->getType() ?></p>
+
+                        <p class="card-text">Descrizione: <?php echo $foodPet->getTypeOfFlavor() ?></p>
+
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+            <?php foreach ($toyPetList as $toyPet) { ?>
+            <div class="col-3">
+                <div class="card col-6" style="width: 18rem;">
+                    <img src=" <?php echo $toyPet->imageUrl ?> " class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $toyPet->getNameProduct() ?></h5>
+                        <p class="card-text">Descrizione: <?php echo $toyPet->getDescription() ?></p>
+                        <p class="card-text">Prezzo: <?php echo $toyPet->getPrice() ?>&euro;</p>
+                        <p class="card-text">Adatto per: <?php echo $toyPet->getCategory()->getType() ?></p>
+
+                        <p class="card-text">Descrizione: <?php echo $toyPet->getMaterial() ?></p>
+
+                    </div>
+                </div>
+            </div>
             <?php } ?>
         </div>
     </article>

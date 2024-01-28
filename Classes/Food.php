@@ -18,9 +18,9 @@ class Food extends Product
     }
 }
 $Flavor = [
-    $flavorDog_1 = 'Manzo',
-    $flavorDog_2 = 'Vitello',
-    $flavorDog_3 = 'Maiale',
-    $flavorDog_4 = 'Merluzzo',
-    $flavorDog_5 = 'Prosciutto'
+    $flavor_1 = 'Manzo',
+    $flavor_2 = 'Vitello',
+    $flavor_3 = 'Maiale',
+    $flavor_4 = 'Merluzzo',
+    $flavor_5 = 'Prosciutto'
 ];

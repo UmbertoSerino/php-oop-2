@@ -28,15 +28,19 @@ class Category
     {
         $this->type = ucfirst(strtolower($_type));
     }
+    public function getType()
+    {
+        return $this->type;
+    }
 }
 
 $categorieDog = [
-    $categoryDog_1 = new Category('Dog', 'German Shepherd', 'Adult'),
-    $categoryDog_2 = new Category('Dog', 'Bulldog', 'Puppy')
+    $categoryDog_1 = new Category('Cani', 'Pastore Tedesco', 'Adulto'),
+    $categoryDog_2 = new Category('Cani', 'Bulldog', 'Cucciolo')
 ];
 
 $categorieCat = [
-    $categoryCat_1 = new Category('Cat', 'Maine Coon', 'Adult'),
-    $categoryCat_2 = new Category('Cat', 'Ragdoll', 'Puppy'),
+    $categoryCat_1 = new Category('Gatti', 'Maine Coon', 'Adulto'),
+    $categoryCat_2 = new Category('Gatti', 'Ragdoll', 'Cucciolo'),
 ];
 ?>
