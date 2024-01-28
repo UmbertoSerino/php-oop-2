@@ -11,7 +11,7 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 
 <?php
 require_once __DIR__ . '/Product.php';
-class Category extends Product
+class Category
 {
     protected $type;
     protected $pedigree;

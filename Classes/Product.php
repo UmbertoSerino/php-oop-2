@@ -44,36 +44,31 @@ class Product
         // $this->available = $_available;
     }
     // Function SET e GET nameProduct
-    public function setNameProduct($_nameProduct)
-    {
-        $this->nameProduct = ucfirst(strtolower($_nameProduct));
-    }
+
     public function getNameProduct()
     {
-        return $this->nameProduct;
+        return ucfirst(strtolower($this->nameProduct));
     }
     // Function SET e GET price
     public function setPrice($_price)
     {
-        if (is_string($_price)) {
-            $this->price = intval($_price);
-        }
+        $this->price = (float)$_price;
     }
     public function getPrice()
     {
-        return $this->price;
+        return number_format($this->price, 2);
     }
     // Function SET e GET imageURL
     public function setImageUrl($_imageUrl)
     {
         $this->imageUrl = $_imageUrl;
     }
-    // Function SET e GET description
 
-    public function setDescription()
+    public function getCategory()
     {
-        return $this->description;
+        return $this->category;
     }
+    // Function e GET description
 
     public function getDescription()
     {
@@ -82,6 +77,4 @@ class Product
     // Function SET e GET available
 
 }
-
-
 ?>
