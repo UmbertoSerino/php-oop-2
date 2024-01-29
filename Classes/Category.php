@@ -10,7 +10,6 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 <!-- potremmo usare tre classi figlie a loro volta, una per cibo, un'altra per giochi e cucce ed un'altra per prodotti per animali  -->
 
 <?php
-require_once __DIR__ . '/Product.php';
 class Category
 {
     protected $type;

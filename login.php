@@ -4,7 +4,7 @@ require_once __DIR__ . '/Classes/Product.php';
 session_start();
 session_unset();
 
-$userPassword = '12345';
+$userPassword = '12345A';
 $userEmail = 'AAA@gmail.com';
 // header('Location: ./index.php')
 ?>
@@ -71,7 +71,8 @@ $userEmail = 'AAA@gmail.com';
                 <div class="alert alert-danger" role="alert">
                     Hai sbagliato ad inserire le tue credenziali, maledizione!
                 </div>
-        <?php  }
+                <?php header('refresh:1 ./index.php')  ?>
+        <?php }
         } ?>
     </main>
 </body>

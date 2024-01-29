@@ -10,13 +10,7 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 <!-- potremmo usare tre classi figlie a loro volta, una per cibo, un'altra per giochi e cucce ed un'altra per prodotti per animali  -->
 
 <?php
-require_once __DIR__ . '/Category.php';
-require_once __DIR__ . '/Food.php';
-require_once __DIR__ . '/PetBed.php';
 require_once __DIR__ . '/ProductShop.php';
-
-
-
 class Product
 {
     public $nameProduct;
@@ -24,24 +18,26 @@ class Product
     public $price;
     public $imageUrl;
     public $description;
-    // protected $available;
+    public $quantity;
 
     /**
      * fun construct Product
      *
-     * @param string $_name
+     * @param string $_nameProduct
      * @param Category $_category
      * @param integer $_price
-     * @param boolean $_available
+     * @param string $imageUrl
+     * @param string $description
+     * @param int $quantity
      */
-    public function __construct(string $_nameProduct, Category $_category, float $_price, string $_imageUrl, string $_description)
+    public function __construct(string $_nameProduct, Category $_category, float $_price, string $_imageUrl, string $_description, int $_quantity)
     {
         $this->nameProduct = $_nameProduct;
         $this->category = $_category;
         $this->price = $_price;
         $this->imageUrl = $_imageUrl;
         $this->description = $_description;
-        // $this->available = $_available;
+        $this->quantity = $_quantity;
     }
     // Function SET e GET nameProduct
 
@@ -74,7 +70,18 @@ class Product
     {
         return $this->description;
     }
-    // Function SET e GET available
-
+    // Function SET e GET quantity
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+    public function setQuantity($_quantity)
+    {
+        if ($_quantity > 0) {
+            return $this->quantity;
+        } else {
+            echo 'La disponibilità è insufficiente';
+        }
+    }
 }
 ?>
