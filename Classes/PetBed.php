@@ -16,4 +16,8 @@ class PetBed extends Product
     {
         return $this->size;
     }
+    public function getAdditionalInfo()
+    {
+        return 'Dimensioni Cucce / Lettini: ' . $this->size;
+    }
 }

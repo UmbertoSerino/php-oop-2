@@ -13,6 +13,7 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 require_once __DIR__ . '/ProductShop.php';
 class Product
 {
+
     public $nameProduct;
     public $category;
     public $price;

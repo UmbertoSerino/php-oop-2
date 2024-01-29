@@ -13,10 +13,10 @@ $petBedCat_2 = new PetBed('Metal Gear Bed per Gatti', $categoryCat, '30.99', 'ht
 
 // FoodProduct
 
-$foodPetDog_1 = new Food('Piedi di gree Snack', $categoryDog, '15.90', 'https://www.naturepetshop.it/wp-content/uploads/cibo-secco-per-cani-300x215.jpg', 'Il piu\' bel cibo che tu possa dare al tuo miglior cane di sempre', 4, $flavor_1);
-$foodPetDog_2 = new Food('Royal Carinin', $categoryDog, '5.90', 'https://www.razzedicani.net/wp-content/uploads/2023/08/crocchette-cani.jpg', 'Ancora più cibo per il bel cane', 3, $flavor_2);
-$foodPetCat_1 = new Food('PerfarovLife', $categoryCat, '12.90', 'https://www.nonsprecare.it/wp-content/uploads/2016/11/cibo-per-gatti-fai-da-te-sano-e-low-cost-3.jpg', 'Sempre con canireria ', 8, $flavor_3);
-$foodPetCat_2 = new Food('Acuna Matata', $categoryCat, '15.00', 'https://petadvisor.it/wp-content/uploads/2022/01/cibo-gatti-un.jpg', 'Non vorrà più farne a meno', 5, $flavor_2);
+$foodPetDog_1 = new Food('Piedi di gree Snack', $categoryDog, 15.90, 'https://www.naturepetshop.it/wp-content/uploads/cibo-secco-per-cani-300x215.jpg', 'Il piu\' bel cibo che tu possa dare al tuo miglior cane di sempre', 4, 'Manzo', 5, 3, 2);
+$foodPetDog_2 = new Food('Royal Carinin', $categoryDog, '5.90', 'https://www.razzedicani.net/wp-content/uploads/2023/08/crocchette-cani.jpg', 'Ancora più cibo per il bel cane', 3, 'Pollo', 7, 8, 3);
+$foodPetCat_1 = new Food('PerfarovLife', $categoryCat, '12.90', 'https://www.nonsprecare.it/wp-content/uploads/2016/11/cibo-per-gatti-fai-da-te-sano-e-low-cost-3.jpg', 'Sempre con canireria ', 8, 'Prosciutto', 4, 3, 3);
+$foodPetCat_2 = new Food('Acuna Matata', $categoryCat, '15.00', 'https://petadvisor.it/wp-content/uploads/2022/01/cibo-gatti-un.jpg', 'Non vorrà più farne a meno', 5, 'Merluzzo', 2, 3, 1);
 
 // ToyProduct
 

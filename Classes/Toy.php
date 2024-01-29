@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/Product.php';
 
 class Toy extends Product
 {
@@ -16,6 +15,10 @@ class Toy extends Product
     public function getMaterial()
     {
         return $this->materialToy;
+    }
+    public function getAdditionalInfo()
+    {
+        return 'Materiale: ' . $this->materialToy;
     }
 }
 $material = [

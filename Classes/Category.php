@@ -12,12 +12,14 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 <?php
 class Category
 {
-    protected $type;
+    public $type;
+    public $iconUrl;
 
 
-    public function __construct(string $_type)
+    public function __construct(string $_type, string $_iconUrl)
     {
         $this->type = $_type;
+        $this->iconUrl = $_iconUrl;
     }
 
     public function setType($_type)
@@ -30,6 +32,6 @@ class Category
     }
 }
 
-$categoryDog = new Category('Cani');
-$categoryCat = new Category('Gatti');
+$categoryDog = new Category('Cani', 'https://cdn-icons-png.freepik.com/512/91/91544.png');
+$categoryCat = new Category('Gatti', 'https://static.thenounproject.com/png/6725-200.png');
 ?>

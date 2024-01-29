@@ -44,23 +44,22 @@ $userEmail = 'AAA@gmail.com';
                         <!-- start foreach product -->
                         <?php foreach ($listProduct as $product) { ?>
                             <div class="col-3 mb-5">
-                                <div class="card col-6" style="width: 18rem;">
+                                <div class="card col-6" style="width: 18rem">
+                                    <!-- image Product -->
                                     <img src=" <?php echo $product->imageUrl ?> " class="card-img-top" alt="...">
                                     <div class="card-body">
+                                        <!-- name product -->
                                         <h5 class="card-title"><?php echo $product->getNameProduct() ?></h5>
+                                        <!-- category product -->
+                                        <p class="card-text">Adatto per: <?php echo $product->category->type ?></p>
+                                        <!-- quantity product -->
+                                        <p class="card-text">Disponibilità: <?php echo $product->quantity ?></p>
+                                        <!-- description product -->
                                         <p class="card-text">Descrizione: <?php echo $product->getDescription() ?></p>
-                                        <p class="card-text">Prezzo: <?php echo $product->getPrice() ?>&euro;</p>
-                                        <p class="card-text">Adatto per: <?php echo $product->getCategory()->getType() ?></p>
-                                        <!-- additional category: condition Toys -->
-                                        <?php if (is_a($product, 'Toy')) { ?>
-                                            <p class="card-text">Tipo di Materiale: <?php echo $product->getMaterial() ?></p>
-                                            <!-- additional category: condition Food -->
-                                        <?php } elseif (is_a($product, 'Food')) { ?>
-                                            <p class="card-text">Gusto: <?php echo $product->getTypeOfFlavor() ?></p>
-                                            <!-- additional category: condition PetBed -->
-                                        <?php } elseif (is_A($product, 'petBed')) { ?>
-                                            <p class="card-text">Dimensioni: <?php echo $product->getSize() ?></p>
-                                        <?php } ?>
+                                        <p class="card-text"> <?php echo $product->getAdditionalInfo() ?></p>
+                                        <?php  ?>
+                                        <!-- price product -->
+                                        <a href="#" class="btn btn-primary">Prezzo: <?php echo $product->getPrice() ?>&euro; </a>
                                     </div>
                                 </div>
                             </div>
@@ -78,3 +77,22 @@ $userEmail = 'AAA@gmail.com';
 </body>
 
 </html>
+
+
+<!-- <?php // if (is_a($product, 'Toy')) { 
+        ?>
+<p class="card-text">Tipo di Materiale: <?php // echo $product->getMaterial() 
+                                        ?></p>
+ additional category: condition Food
+<?php // } elseif (is_a($product, 'Food')) { 
+?>
+<p class="card-text">Gusto: <?php // echo $product->getTypeOfFlavor() 
+                            ?></p>
+ additional category: condition PetBed
+<?php // } elseif (is_A($product, 'petBed')) { 
+?>
+<p class="card-text">Dimensioni: <?php //echo $product->getSize() 
+                                    ?></p>
+<?php // } 
+?>
+ -->
